@@ -1,95 +1,45 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+"use client"
 
-export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+import { SearchIcon } from "@chakra-ui/icons"
+import {
+    Box,
+    Center,
+    Container,
+    Flex,
+    IconButton,
+    Image,
+    Input,
+    Stack,
+    Text
+} from "@chakra-ui/react"
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+interface Props {
+    children: React.ReactNode
+}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+export default function Nav() {
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+    return (
+        <>
+            <Box bg="gray.900" px={4} color="white">
+                <Flex h={"7vh"} alignItems={"center"} justifyContent={"center"} gap={"10px"}>
+                    <Box>
+                        <Image height={"60px"} src="/logo.svg" />
+                    </Box>
+                    <Text fontSize={"2xl"}>Dataset</Text>
+                </Flex>
+            </Box>
+            <Flex color={"white"} minH={"93vh"} bg={"gray.700"} alignItems={"center"} justifyContent={"center"} direction={"column"}>
+                <Text fontSize="5xl">Welcome to the IMDB Dataset</Text>
+                <Text>Search for a movie</Text>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+                <Container py={{ md: "5" }}>
+                    <Stack direction={"row"} gap={1}>
+                        <Input colorScheme={"blackAlpha"} placeholder="The Great Beauty, Cinema Paradiso..." />
+                        <IconButton colorScheme={"blackAlpha"} aria-label="Search database" icon={<SearchIcon />} />
+                    </Stack>
+                </Container>
+            </Flex>
+        </>
+    )
 }
