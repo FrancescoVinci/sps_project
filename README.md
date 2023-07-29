@@ -31,7 +31,7 @@ Clone the repository and then run
 
     npm install
 
-Install **Postgresql**. Open **pgAdmin** and create a database. Right click on the newly created database and click **Restore**. In the opened window a backup file is requested, select the `backup.sql` file and click restore.
+Install **Postgresql**. Open **pgAdmin** and create a database. Right click on the newly created database and click **Restore**. In the opened window a backup file is requested, select the `backup.sql` ([download](https://drive.google.com/file/d/1xs32GG3QMwMxa3HMv6vd166HJeLUzqA_/view?usp=sharing)) file and click restore.
 This will populate the database with the IMDB dataset.
 
 Then modify the `DATABASE_URL` variable in the `.env` file.
