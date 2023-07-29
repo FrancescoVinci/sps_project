@@ -19,9 +19,7 @@ export async function GET(request: Request) {
 
     const title = await prisma.title_basics.findFirst({
         where: {
-            primarytitle: {
-                contains: titleName
-            },
+            primarytitle: { contains: titleName },
             title_type: "movie",
 
         },
