@@ -8,6 +8,8 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const titleName = searchParams.get("title");
 
+    console.log(searchParams);
+
     if (!titleName) {
         return NextResponse.json({
             response_code: 400,
